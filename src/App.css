@@ -1,0 +1,262 @@
+ul {
+  list-style-type: none;
+}
+nav {
+  height: 80px;
+  background: transparent;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  z-index: 1;
+}
+.nav-container {
+  width: 90vw;
+  max-width: 1170px;
+  margin: 20px 30px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.toggle-btn {
+  display: none;
+}
+.nav-link {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.nav-link li {
+  margin: 0 10px;
+}
+.link-btn {
+  border: none;
+  background: transparent;
+  color: #fff;
+  font-size: 20px;
+  text-transform: capitalize;
+  letter-spacing: 1px;
+  width: 150px;
+  
+}
+.hero::before {
+  position: absolute;
+  content: "";
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  background: url(./images/hero.svg);
+  background-size: contain;
+  background-repeat: no-repeat;
+  z-index: -1;
+}
+.hero {
+  position: relative;
+  min-height: 100vh;
+  display: flex;
+  margin-top: -80px;
+  justify-content: center;
+}
+.hero-container {
+  width: 90vw;
+  max-width: 1170px;
+  display: flex;
+  align-items: center;
+}
+.hero-info {
+  width:  66%;
+}
+.hero-info h1 {
+  max-width: 500px;
+  font-size: 48px;
+}
+.hero-info p {
+  font-size: 22px;
+  width: 500px;
+}
+.hero-img {
+  width: 33%;
+  display: block;
+  justify-self: center;
+}
+.phone-img {
+  width: 196px;
+}
+.btn {
+  border: none;
+  background: black;
+  color: #fff;
+  padding: 10px 15px;
+  border-radius: 30px;
+  letter-spacing: 1px;
+  box-shadow: 2px 5px 5px rgba(148, 147, 147, 0.5);
+  cursor: pointer;
+  transition: transform 0.1s ease-in;
+}
+.btn:focus {
+  outline:none
+}
+.btn:active {
+  transform: scale(0.9)
+}
+
+.sidebar-wrapper {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.3s linear;
+  transform: scale(0);
+  background: rgba(0, 0, 0, 0.5);
+  visibility: hidden;
+  z-index: -1;
+  display: none;
+}
+.show-sidebar {
+  visibility: visible;
+  transform: scale(1);
+  z-index: 2;
+}
+
+.close-btn {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  background: transparent;
+  border: none;
+  color: red;
+  cursor: pointer;
+  font-size: 25px;
+}
+.sidebar-sublinks {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  row-gap: 4px;
+}
+.sidebar-sublinks a {
+  text-decoration: none;
+  color: hsl(209, 61%, 16%);
+  text-transform: capitalize;
+  display: flex;
+  align-items: center;
+}
+.sidebar-sublinks a svg {
+  margin-right: 16px;
+}
+
+.submenu {
+  background: #fff;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+  position: absolute;
+  top: 64px;
+  left: 50%;
+  transform: translateX(-50%);
+  padding: 32px;
+  border-radius: 3px;
+  display: none;
+  transition: all 0.3s linear;
+  z-index: 3;
+  margin-top: 8px;
+}
+.submenu::before {
+  content: "";
+  display: block;
+  width: 0;
+  height: 0;
+  border-left: 5px solid transparent;
+  border-right: 5px solid transparent;
+  border-bottom: 5px solid #fff;
+  position: absolute;
+  top: -5px;
+  left: 50%;
+  transform: translateX(-50%);
+  
+
+}
+.show-submenu {
+  display: block;
+}
+.submenu-center {
+  display: grid;
+  gap: 4px;
+}
+.col-2 {
+  grid-template-columns: repeat(2, 1fr);
+}
+.col-3 {
+  grid-template-columns: repeat(3, 1fr);
+}
+.col-4 {
+  grid-template-columns: repeat(4, 1fr);
+}
+.submenu h4 {
+  margin-bottom: 24px;
+}
+.submenu-center a {
+  width: 160px;
+  color: hsl(209, 61%, 16%);
+  text-transform: capitalize;
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+
+}
+.submenu-center a svg {
+  margin-right: 16px;
+}
+
+@media screen and (max-width: 800px){
+  .phone-img, .nav-link, .signin-btn {
+    display: none;
+  }
+  .hero::before {
+    background-size: cover;
+  }
+  .hero-info h1 {
+    width: 100%;
+  }
+  .hero-info  {
+    width: 100%;
+    margin-left: px;
+
+  }
+  .hero-info p {
+    width: 95vw;
+    font-size: 20px;
+    padding: 0 10px;
+  }
+  .toggle-btn {
+    border: none;
+    display: block;
+    border-radius: 5px;
+    background: black;
+    color: #fff;
+    padding: 5px 10px;
+    font-size: 20px;
+    cursor: pointer;
+  }
+  .nav-header {
+    width: 95vw;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  .sidebar-wrapper {
+    display: block;
+  }
+  .side-bar {
+    margin: 20px auto;
+    width: 95vw;
+    height: 95vh;
+    background-color: #fff;
+    border-radius:3px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+    padding: 64px 32px;
+    position: relative;
+  }
+}
